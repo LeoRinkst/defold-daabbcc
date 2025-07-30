@@ -607,10 +607,12 @@ namespace daabbcc
         m->n = n;
     }
 
-    static inline void Bound(b2AABB* aabb, float x, float y, uint32_t width, uint32_t height)
+//Small modification here. Function uses the same name of variables, but passes them to bounds by summing width and height (also, changing types from uint32_t to floating point values)
+
+    static inline void Bound(b2AABB* aabb, float x, float y, float width, float height)
     {
-        aabb->lowerBound = { x - (width / 2.0f), y - (height / 2.0f) };
-        aabb->upperBound = { x + (width / 2.0f), y + (height / 2.0f) };
+        aabb->lowerBound = { x, y };
+        aabb->upperBound = { x + width, y + height };
     }
 
     // From Defold source

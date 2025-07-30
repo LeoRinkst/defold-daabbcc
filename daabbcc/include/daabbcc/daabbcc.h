@@ -200,7 +200,7 @@ namespace daabbcc
 
     static void        AABBtoAABBManifold(b2AABB A, b2AABB B, b2Manifold* m);
 
-    static inline void Bound(b2AABB* aabb, float x, float y, uint32_t width, uint32_t height);
+    static inline void Bound(b2AABB* aabb, float x, float y, float width, float height);
 
     static void        CalcTimeStep(float& step_dt, uint32_t& num_steps);
 
